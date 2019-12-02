@@ -1,15 +1,16 @@
 from django.db import models
 
 class Squirrel(models.Model):
-    Latittude=models.FloatField()
+    Latittude=models.FloatField(
+        primary_key = True
+    )
 
     Longitude=models.FloatField()
 
     S_ID=models.CharField(
-        max_length=20,
-        primary_key = True,
-    )
-
+         max_length=20
+    )    
+  
     AM = 'AM'
     PM = 'PM'
     SHIFT_CHOICES = (
@@ -104,5 +105,9 @@ class Squirrel(models.Model):
     Indifferent = models.BooleanField()
 
     Run_from = models.BooleanField()
+   
+    def __str__(self):
+        return self.S_ID
 
 
+    
