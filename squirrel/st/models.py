@@ -2,13 +2,13 @@ from django.db import models
 
 class Squirrel(models.Model):
     Latittude=models.FloatField(
-        primary_key = True
     )
 
     Longitude=models.FloatField()
 
     S_ID=models.CharField(
-         max_length=20
+         max_length=20,
+         primary_key = True,
     )    
   
     AM = 'AM'

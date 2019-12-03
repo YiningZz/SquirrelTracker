@@ -1,0 +1,9 @@
+{% if all_squirrel_sightings %}
+    <ul>
+    {% for sq in all_squirrel_sightings %}
+    <li>{{ sq.S_ID }}	<a href="{% url 'st:update' sq.S_ID %}">Update</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No sightings are available.</p>
+{% endif %}
