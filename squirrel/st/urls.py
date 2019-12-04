@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,re_path
 from . import views
 
 app_name = 'st'
@@ -8,7 +8,7 @@ urlpatterns = [
     # ex: /st/sightings
     path('sightings', views.index, name='index'),
     # ex: /st/sightings/37F-PM-1014-03
-    path('sightings/' + r'^(?P<pk>[A-Z0-9-]+)$',views.update.as_view(), name='update'),
+    re_path(r'sightings/(?P<pk>[A-Z0-9-]+)',views.update.as_view(), name='update'),
     # ex: /st/sightings/add
 
     # ex: /st/sightings/37F-PM-1014-03

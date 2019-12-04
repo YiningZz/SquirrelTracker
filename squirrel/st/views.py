@@ -19,11 +19,17 @@ def index(request):
 # a view to update a particular sighting
 class update(UpdateView):
     model = Squirrel
-    fields = ['X','Y','S_ID','Shift']
+    fields = ['Latittude','Longitude','S_ID','Date','Age','Fur','Location','S_location',
+            'Run','Chase','Climb','Eat','Forage','Other_a','Kuks','Quaas','Moans',
+            'T_flag','T_twitch','Approach','Indifferent','Run_from']
     template_name = 'st/update.html'
+    success_url = '/st/sightings'
 
-    def get_object(self):
-        return Squirrel.objects.get(pk=self.request.GET.get('pk'))
+#    def get_absolute_url(self):
+#        return reverse('views.update')
+
+#    def get_object(self):
+#        return Squirrel.objects.get(pk=self.request.GET.get('pk'))
 #def update(request, sid):
 #    sq = get_object_or_404(Squirrel, pk=sid)
 #    return render(request, 'st/update.html',{'sq': sq})
