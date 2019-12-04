@@ -1,7 +1,9 @@
 {% if all_squirrel_sightings %}
     <ul>
+	    <a href="{% url 'st:create' %}">ADD</a>>
     {% for sq in all_squirrel_sightings %}
-    <li>{{ sq.S_ID }}	<a href="{% url 'st:update' sq.S_ID %}">Update</a></li>
+    <li>{{ sq.S_ID }}	
+	<a href="{% url 'st:update' sq.S_ID %}">Edit</a></li>
     {% endfor %}
     </ul>
 {% else %}

@@ -1,8 +1,11 @@
-import os
+# /st/management/commands/import_squirrel_data.py
+
 import csv
+from datetime import datetime
 
 from django.core.management.base import BaseCommand, CommandError
 from st.models import Squirrel as sq
+
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
@@ -23,7 +26,7 @@ class Command(BaseCommand):
                         Longitude = row[1],
                         S_ID = row[2],
                         Shift = row[4],
-                        Date = row[5],
+                        Date = datetime.strptime(row[5],'%m%d%Y').date(),
                         Age = row[7],
                         Fur = row[8],
                         Location = row[12],

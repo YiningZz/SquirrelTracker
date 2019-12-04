@@ -2,5 +2,6 @@
 
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Update">
+    <input type="submit" name='confirm_post' value="Update">
+    <input type="submit" name="confirm_delete" value="Delete">
 </form>

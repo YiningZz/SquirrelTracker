@@ -1,8 +1,9 @@
+# st/models.py
+
 from django.db import models
 
 class Squirrel(models.Model):
-    Latittude=models.FloatField(
-    )
+    Latittude=models.FloatField()
 
     Longitude=models.FloatField()
 
@@ -21,11 +22,10 @@ class Squirrel(models.Model):
     Shift=models.CharField(
         max_length = 2,
         choices = SHIFT_CHOICES,
+        blank = True,
     )
 
-    Date=models.CharField(
-        max_length = 8
-    )
+    Date=models.DateField()
     
     ADULT = 'Adult'
     JUVENILE = 'Juvenile'
@@ -41,6 +41,7 @@ class Squirrel(models.Model):
         max_length = 20,
         choices = AGE_CHOICES,
         default = AGE_OTHER,
+        blank = True,
     )
 
     GRAY = 'Gray'
@@ -58,6 +59,7 @@ class Squirrel(models.Model):
         max_length = 10,
         choices = FUR_CHOICES,
         default = FUR_OTHER,
+        blank = True,
     )
 
     ABOVE_GROUND = 'Above Ground'
@@ -74,9 +76,10 @@ class Squirrel(models.Model):
         max_length = 20,
         choices = LO_CHOICES,
         default = LO_OTHER,
+        blank = True,
     )
 
-    S_location=models.CharField(max_length=200)
+    S_location=models.CharField(max_length=200,blank=True,default='')
 
     Run = models.BooleanField()
 
@@ -88,7 +91,7 @@ class Squirrel(models.Model):
 
     Forage = models.BooleanField()
 
-    Other_a = models.CharField(max_length=200)
+    Other_a = models.CharField(max_length=200,blank=True,default='')
 
     Kuks = models.BooleanField()
 
