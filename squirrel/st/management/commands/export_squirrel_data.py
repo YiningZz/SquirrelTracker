@@ -15,9 +15,14 @@ class Command(BaseCommand):
             raise CommandError("Invalid Innovation.")
 
         path = args[0]
-        fields = sq._meta.fields 
-
+        fields = sq._meta.fields
+        row = ''
+        for field in fields:
+            row += field.name + ','
+        
         with open(path,'w',newline='') as f:
+            print(row,file=f)
+
             for obj in sq.objects.all():
                 row = ""
                 for field in fields:

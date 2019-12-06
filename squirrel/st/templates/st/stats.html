@@ -1,0 +1,8 @@
+<!--st/templates/st/stats.html-->
+{% if stats %}
+    <ul>
+    {% for k,v in stats.items %}
+    <li>{{ k }}: {{ v }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}

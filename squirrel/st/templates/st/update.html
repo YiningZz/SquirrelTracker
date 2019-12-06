@@ -1,7 +1,12 @@
 <!--st/templates/st/update.html-->
-
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name='confirm_post' value="Update">
-    <input type="submit" name="confirm_delete" value="Delete">
+<!doctype>
+<html>
+    <body>
+	<form method="post">
+	{% csrf_token %}
+ 	{{ form.as_p }}
+	<br>
+   	<input type="submit" name="Submit">
+	</form>
+    </body>
 </form>

@@ -3,9 +3,9 @@
 from django.db import models
 
 class Squirrel(models.Model):
-    Latittude=models.FloatField()
-
     Longitude=models.FloatField()
+
+    Latitude=models.FloatField()
 
     S_ID=models.CharField(
          max_length=20,
