@@ -36,7 +36,7 @@ def update(request, pk):
     else:
         form = SquirrelForm(instance=sq)
     context = {
-        'form': form,        
+            'form': form,
     }
     return render(request, 'st/update.html', context)
 
@@ -46,9 +46,9 @@ class create(CreateView):
     model = Squirrel
     fields = '__all__'
     template_name = 'st/create.html'
-
-    def get_success_url(self):
-        return reverse_lazy('st:index')
+    success_url = reverse_lazy('index')
+#    def get_success_url(self):
+#        return reverse_lazy('st:index')
 
 # a view to delete a sighting
 

@@ -8,7 +8,7 @@ urlpatterns = [
     # ex: /st/sightings
     path('sightings', views.index, name='index'),
     # ex: /st/sightings/37F-PM-1014-03
-    re_path(r'sightings/(?P<pk>[a-zA-Z0-9-]+)',views.update, name='update'),
+    re_path(r'sightings/(?P<pk>[A-Z0-9-]+)',views.update, name='update'),
     # ex: /st/sightings/add
     path('sightings/add',views.create.as_view(), name='create'),
     # ex: /st/sightings/37F-PM-1014-03
