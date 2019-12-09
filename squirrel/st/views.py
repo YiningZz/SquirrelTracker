@@ -46,7 +46,7 @@ class create(CreateView):
     model = Squirrel
     fields = '__all__'
     template_name = 'st/create.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('st:index')
 #    def get_success_url(self):
 #        return reverse_lazy('st:index')
 
